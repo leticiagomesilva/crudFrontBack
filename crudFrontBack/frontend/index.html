@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRUD de Registros</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>CRUD de Registros</h1>
+
+    <form id="registroForm">
+      <input type="hidden" id="registroId" />
+
+      <div class="campo">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" />
+        <small class="erro" id="erroNome"></small>
+      </div>
+
+      <div class="campo">
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" rows="4"></textarea>
+        <small class="erro" id="erroDescricao"></small>
+      </div>
+
+      <div class="campo">
+        <label for="categoria">Categoria</label>
+        <select id="categoria">
+          <option value="">Selecione</option>
+          <option value="Categoria A">Categoria A</option>
+          <option value="Categoria B">Categoria B</option>
+          <option value="Categoria C">Categoria C</option>
+        </select>
+        <small class="erro" id="erroCategoria"></small>
+      </div>
+
+      <div class="campo">
+        <label>Status</label>
+        <div class="radio-group">
+          <label><input type="radio" name="status" value="ativo" /> Ativo</label>
+          <label><input type="radio" name="status" value="inativo" /> Inativo</label>
+        </div>
+        <small class="erro" id="erroStatus"></small>
+      </div>
+
+      <div class="botoes">
+        <button type="submit" id="btnSalvar">Salvar</button>
+        <button type="button" id="btnCancelar" class="secundario">Cancelar edição</button>
+      </div>
+    </form>
+
+    <hr />
+
+    <h2>Lista de Registros</h2>
+    <button id="btnRecarregar">Recarregar lista</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Categoria</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaRegistros"></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
