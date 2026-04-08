@@ -33,3 +33,50 @@ crudFrontBack/
     ├── index.html
     ├── style.css
     └── script.js
+```
+## Como rodar o projeto
+
+### 1. Clonar o repositório
+
+```bash
+git clone <URL_DO_REPOSITORIO>
+cd crudFrontBack
+```
+
+```bash
+cd backend
+```
+
+### 2. Criar e Ativar ambiente virtual
+
+```bash
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+### 3. Instalar dependências 
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Subir banco MySQL com Docker 
+
+```bash
+docker run --name mysql-crud -e MYSQL_ROOT_PASSWORD=admin -e MYSQL_DATABASE=crud_registros -p 3306:3306 -d mysql:8.0
+```
+
+### 5. Rodar o backend
+
+```bash
+uvicorn main:app --reload
+```
+
+### 5. Rodar o frontend
+
+```bash
+cd ..
+cd frontend
+```
+
+Abra o arquivo index.html no navegador e veja a mágica acontecer...
